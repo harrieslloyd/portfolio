@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+#maincont {
+    display: grid block;
+    grid-template-columns: [cstart] 2fr [c3end] 50px [c4start] 6fr [c1end] 50px [c2start] 4fr [cend];
+  grid-template-rows: 6fr 50px 4fr;
+    width: 90vw;
+    height: 88vh;
+    padding: 50px;
+}
+
+
+.card {
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.49), rgba(255, 255, 255, 0.21));
+    border-radius: 28px;
+    border: 4px solid rgba(255, 255, 255, .5);
+    transform-style: preserve-3d;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("Rectangle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#c1 {
+    grid-column: cstart / c1end;
+    grid-row: 1;
+}
+
+#c2 {
+    grid-column: c2start / cend;
+    grid-row: 1;
+    padding: 20px;
+}
+
+#c3 {
+    grid-column: cstart / c3end;
+    grid-row: 3;
+}
+
+#c4 {
+    grid-column: c4start / cend;
+    grid-row: 3;
+}
+
+#c2 .text {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 800 !important;
+    font-size: 3rem
+}
+
+#c2 span {
+    font-size: 2rem;
+}
+
+#c2 p {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    max-width: 80%;
+}
+
+.text {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+b {
+    font-weight: 800;
+}
