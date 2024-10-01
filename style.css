@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 #maincont {
     display: grid block;
-    grid-template-columns: [cstart] 2fr [c3end] 50px [c4start] 6fr [c1end] 50px [c2start] 4fr [cend];
-  grid-template-rows: 58fr 50px 42fr;
-    width: 90vw;
-    height: 88vh;
-    padding: 50px;
+    grid-template-columns: [cstart] 2fr [c3end] 40px [c4start] 6fr [c1end] 40px [c2start] 4fr [cend];
+  grid-template-rows: 58fr 40px 42fr;
+    width: calc(100vw - 80px);
+    height: calc(100vh - 80px);
+    margin: 40px;
 }
 
 
@@ -21,17 +21,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     background-image: url("Rectangle.png");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: visible;
+    background-attachment: fixed;
 }
 
 
 #c1 {
     grid-column: cstart / c1end;
     grid-row: 1;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
 }
 
 #c2 {
@@ -46,12 +48,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 #c4 {
     grid-column: c4start / cend;
     grid-row: 3;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
 }
 
 #c2 .text {
@@ -104,25 +108,33 @@ b {
 }
 
 #c1 h1 {
-    margin-top: -10px;
     font-size: calc(1.5vw + 1.5vh);
     font-weight: 600 !important;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
 #c4 h1 {
     margin-top: -15px;
     font-size: calc(1.5vw + 1.5vh);
     font-weight: 600 !important;
+    position: absolute;
+    top: 22.5px;
+    left: 20px;
 }
 
-table {
+.table {
+    display: flex block;
     width: 100%;
-    height: 85%;
-    gap: 20px;
-    border-spacing: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0
+    max-height: 90%;
+    gap: 15px;
+    align-self: end;
+    max-width: 100% !important;
+    align-items: stretch;
+    justify-content:space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 h3 {
@@ -130,20 +142,23 @@ h3 {
     font-size: calc(0.1vw + 1.75vh);
 }
 
-#websites tr td {
+.cell {
     border-radius: 14px;
     border: 4px solid rgba(255, 255, 255, .5);
-    vertical-align: top;
     padding: 5px;
+    flex-basis: 20vw;
+    flex-grow: 2;
+    width: 20vw;
 }
 
 .light {
     font-weight: 400;
-    font-size: calc(0.15vw + 1.5vh);
+    font-size: 1.7vmin;
+    word-wrap: break-word;
 }
 
 .link {
-    font-size: calc(0.15vw + 1.5vh);
+    font-size: 1.7vmin;
     text-decoration: none;
     margin-top: 3px !important;
     display: block;
@@ -151,17 +166,6 @@ h3 {
 
 .info {
     vertical-align: center;
-}
-
-#projects {
-    height: 10px;
-}
-
-#projects tr td {
-    border-radius: 14px;
-    border: 4px solid rgba(255, 255, 255, .5);
-    vertical-align: top;
-    padding: 5px;
 }
 
 h2 {
@@ -179,4 +183,84 @@ h2 {
 svg {
     width: calc(5.2vw + 4vh);
     height: auto;
+}
+
+
+@media (max-width: 1120px) or (max-height: 650px) {
+
+    #maincont {
+        display: block;
+        margin: 50px;
+        height: auto !important;
+    }
+
+    #c2 {
+        display: flex block;
+        height: fit-content;
+    }
+    #c2 p {
+        position:relative;
+        bottom: unset;
+        right: unset;
+        width: 50% !important;
+        height:100% !important;
+        text-align: right !important;
+        vertical-align: middle;
+    }
+    #c2 div {
+        width: 50% !important;
+        height: 100% !important;
+        align-self: center;
+        position: relative;
+    }
+    #c2 .text {
+        text-align: left;
+    }
+
+    #c1 h1,#c4 h1 {
+        font-size: 3vmax;
+    }
+
+    .table {
+        margin-top: 4vmax !important;
+        flex-direction: column;
+    }
+
+    .card {
+        margin: 20px;
+    }
+
+    .cell {
+        height: fit-content !important;
+        align-self: normal;
+        justify-self: normal;
+        width: auto;
+        flex-basis:auto !important;
+    }
+
+    h3 {
+        font-size: 2vmax;
+    }
+    .light, .link {
+        font-size: 1.75vmax !important;
+    }
+
+    #c3 a {
+        font-size: 2vmax;
+    }
+}
+
+@media (max-width: 350px) {
+    #c2 p {
+        visibility: hidden;
+    }
+}
+
+@media (max-height: 710px) {
+    .table {
+        gap: 10px;
+    }
+    .cell {
+        border-width: 3px;
+    }
 }
