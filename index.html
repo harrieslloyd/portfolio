@@ -169,59 +169,160 @@
         <div class="modal-content" id="3dprintercontent">
             <span class="close">&times;</span>
             <h2>My 3D Printer</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum. Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante. Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
+                <p>4 years ago, I bought the classic entry-level 3D printer: the infamous Ender 3. It works out of the box, but I wouldn't say it works well. 
+                    Full of issues like a PTFE-lined hotend, badly programmed motherboard, horrible cooling fans, and bad firmware, it requires some work to print well.
+                    Luckily, I wasn't focused on printing well out of the box. The reason I got it was to modify it, fix it, and just tinker with it. I call it: The World Ender. Here's a list of things I've done with it:
 
-                Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
-          </div>
+                    <ul>
+                        <li>Silent Motherboard
+                            <ul>
+                                <li>The stock motherboard on the ender 3s makes the stepper motors extremely loud, plus it it hard to update the firmware. So, I switched it for the motherboard on the Ender 3 Pro, which boasts silent steppers and a bootloader for firmware.</li>
+                              </ul>
+                        </li>
+                        <li>BLTouch
+                            <ul>
+                                <li>I added a automatic bed leveling probe on the end of the hotend that will test points on the bed and see how level the bed is. This, combined with my custom firmware, brings the z-axis up and down as it prints to account for minor variations in bed height. </li>
+                              </ul>
+                        </li>
+                        <li>Marlin Firmware
+                            <ul>
+                                <li>I don't like the stock firmware! It's hard to navigate on the interface, you can't change anything, and it is bad at understanding GCODE. So, I compiled my own marlin firmware. This time, I added a custom bootscreen and support for my BLTouch.</li>
+                              </ul>
+                        </li>
+                        <li>Direct Drive Extruder
+                            <ul>
+                                <li>The stock Ender 3 comes with a bowden-style extruder, which pushes the filiment through a long tube before making it to the hotend. This works, but is not great for flexible filiments like TPU. So, I installed a direct-drive extruder, which has the filiment-pushing apparatus right on the printhead. This makes it much easier to print with harder, flexible filiments.</li>
+                              </ul>
+                        </li>
+                        <li>Octopi!
+                            <ul>
+                                <li>This is by far the coolest thing I've done with my printer. I have linked a raspberry PI to my printer and run Octopi on it, an interface that allows me to control the printer right from my browser. I can upload GCODE, run tests, take cool timelapses, and see all the stats. It's very useful.</li>
+                              </ul>
+                        </li>
+                        <li>Dual Z-axis
+                            <ul>
+                                <li>The stock ender 3 has 1 singular z-axis lead screw, which is on the left side. So, when the (heavy!) printhead is on the right side of the x-axis, it hangs down a little lower, which messes up print quality. So I added another z-axis lead screw on the right side as well, and synced them up so it's strong on both ends. This required me to move the powersupply under the printer, which gives me an excuse to upgrade the powersupply</li>
+                              </ul>
+                        </li>
+                        <li>Meanwell thinner PSU
+                            <ul>
+                                <li>When I installed the dual z-axis, I needed to move the PSU out of the way. I opted to put it under the printer, but the stock PSU is too thick. This gave me an excuse to upgrade to a safer, thinner PSU which can fit under my printer.</li>
+                              </ul>
+                        </li>
+                        <li>HEROME 7 Cooling System
+                            <ul>
+                                <li>The cooling on the ender 3 sucks!! There's one wimpy little radial blower fan that goes only one direction. So, I printed a whole new system for my printer that has 2 5015 blower fans forcing air from both sides right onto the nozzle. It also features a cable tower, bltouch holder, and fits with my direct drive extruder.</li>
+                              </ul>
+                        </li>
+                        <li>Lights!
+                            <ul>
+                                <li>I want to be able to see my printer! So I installed LED light strips on under the frame and wired them directly to the power supply, with a buck converter to stem the voltage town to 12v. I then added a switch on the power supply to be able to flick them on and off.</li>
+                              </ul>
+                        </li>
+                    </ul>
+                </p>
+        </div>
     </div>
     <div class="modal" id="chem">
         <div class="modal-content" id="chemcontent">
             <span class="close">&times;</span>
             <h2>Chemistry Calculator</h1>
-            <p>It started as a simple python program to find molar masses, for a tedious homework assignment.
-                
-                <code>
+                <p>It started as a simple python program to find molar masses, for a tedious homework assignment. 
+                    Then it turned into another program for another assignment, another program for another assignment,
+                    and suddenly I had a collection of python programs I could use to do my chemistry homework easily.
+                    Then, I discovered I could add python programs to my calculator, and then I took on the hard task of optimizing 
+                    each python program to use as little memory as possible, not use any external libraries, and not pull anything from a JSON file. 
+                    But, once I finally got it down, I showed my chemistry teacher, and she thought it was the coolest thing. And, even better, she told me I could use it on the tests! 
 
-                </code>
-                
-                Then it turned into another program for another assignment, another program for another assignment, and suddenly I had a collection of python programs I could use to do my chemistry homework easily.  </p>
-          </div>
+                    <br><br>
+
+                    <a target="_blank" href="https://github.com/harrieslloyd/ChemistryPython">Check it out on github →</a>
+                </p>
+        </div>
     </div>
     <div class="modal" id="gd">
         <div class="modal-content" id="gdcontent">
             <span class="close">&times;</span>
             <h2>Graphic Design</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum. Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante. Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum.
+                    Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante.
+                    Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed
+                    aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non
+                    gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi
+                    quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper
+                    a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu
+                    sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam
+                    gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
 
-                Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
-          </div>
+                    Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis
+                    rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a
+                    eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi
+                    porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam
+                    laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
+        </div>
     </div>
     <div class="modal" id="robotics">
         <div class="modal-content" id="roboticscontent">
             <span class="close">&times;</span>
             <h2>Robotics</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum. Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante. Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum.
+                    Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante.
+                    Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed
+                    aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non
+                    gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi
+                    quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper
+                    a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu
+                    sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam
+                    gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
 
-                Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
-          </div>
+                    Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis
+                    rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a
+                    eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi
+                    porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam
+                    laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
+        </div>
     </div>
     <div class="modal" id="vw">
         <div class="modal-content" id="vwcontent">
             <span class="close">&times;</span>
             <h2>Volkswagon Type 2</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum. Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante. Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum.
+                    Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante.
+                    Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed
+                    aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non
+                    gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi
+                    quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper
+                    a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu
+                    sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam
+                    gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
 
-                Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
-          </div>
+                    Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis
+                    rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a
+                    eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi
+                    porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam
+                    laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
+        </div>
     </div>
     <div class="modal" id="thiokol">
         <div class="modal-content" id="thiokolcontent">
             <span class="close">&times;</span>
             <h2>Thiokols!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum. Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante. Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan interdum condimentum.
+                    Phasellus dignissim scelerisque diam, quis semper lacus feugiat vitae. Proin sed dictum ante.
+                    Praesent elementum ipsum lorem, sit amet ultrices lectus finibus et. Aliquam aliquam purus sed
+                    aliquet cursus. Nunc fringilla luctus nunc ut elementum. Donec tristique ex vitae diam posuere, non
+                    gravida turpis viverra. Mauris fringilla eros at eros laoreet, nec faucibus quam accumsan. Morbi
+                    quis tincidunt felis, eu elementum lectus. Donec aliquet efficitur metus sed tristique. Donec semper
+                    a orci sed facilisis. Mauris porttitor, tellus at eleifend gravida, massa purus scelerisque urna, eu
+                    sagittis magna magna nec nisl. Nunc augue lectus, mollis a mi at, vestibulum lacinia dui. Nullam
+                    gravida neque orci, commodo convallis mi tincidunt id. Duis semper sit amet turpis in vulputate.
 
-                Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
-          </div>
+                    Sed lobortis tellus justo, in consequat lacus egestas eget. Nunc sed quam vitae felis lobortis
+                    rhoncus. In et tincidunt risus. Suspendisse id dolor a orci suscipit finibus. Sed condimentum, mi a
+                    eleifend elementum, neque velit dignissim nisl, quis viverra dui lacus vitae ex. Vestibulum id nisi
+                    porta, lobortis nibh ac, interdum orci. Quisque nec pharetra nibh, nec consequat tortor. Nullam
+                    laoreet sapien metus. Fusce dignissim eu mauris eu tempus.</p>
+        </div>
     </div>
 
     <script src="script.js" type="module"></script>
