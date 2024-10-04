@@ -255,6 +255,10 @@ svg {
     #c3 a {
         font-size: 2vmax;
     }
+
+    img {
+        width: 70% !important;
+    }
 }
 
 @media (max-width: 350px) {
@@ -350,4 +354,17 @@ a {
         scale: 1;
         opacity: 1
     }
+}
+
+img {
+    width: 20%;
+}
+
+.modal-content div {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
