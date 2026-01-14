@@ -35,6 +35,9 @@ section {
     font-optical-sizing: auto;
     font-size: 1.2em;
     font-weight: 400;
+}
+
+.blue .centerbox p {
     color: white;
 }
 
@@ -52,7 +55,128 @@ a {
     text-decoration: none;
 }
 
+
 #links a {
     padding-left: 2.5px;
     padding-right: 2.5px;
+}
+
+#quote {
+    color: #3F58D6;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+* {box-sizing:border-box}
+
+#juneauslides {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.caption {
+  color: #f2f2f2;
+  font-size: 0.9em;
+  font-style: italic;
+  padding: 8px 12px;
+  width: 80%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(63, 88, 214, 0.5);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  font-family: "Montserrat", sans-serif
+}
+
+img {
+    width: 40vw;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#juneauabout {
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    color: #3F58D6;
+    font-optical-sizing: auto;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: center;
+    padding: 5vw;
+}
+
+#juneauabout p {
+    width: 40vw;
+}
+
+#juneauabout p a {
+    text-decoration: underline;
+}
+
+
+#juneauabout p a:visited {
+    color: #3F58D6;
+}
+
+#juneau {
+    padding: 0vw;
 }
